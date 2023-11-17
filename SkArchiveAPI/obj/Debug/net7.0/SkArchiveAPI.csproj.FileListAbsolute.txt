@@ -77,3 +77,4 @@ C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\ref
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkArchiveAPI.pdb
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkArchiveAPI.genruntimeconfig.cache
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\ref\SkArchiveAPI.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\CsvHelper.dll

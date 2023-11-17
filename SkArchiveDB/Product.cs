@@ -31,6 +31,9 @@ public partial class Product
     [Column("pic", TypeName = "image")]
     public byte[] Pic { get; set; } = null!;
 
+    [Column("brand_id")]
+    public int BrandId { get; set; }
+
     [ForeignKey("Id")]
     [InverseProperty("Product")]
     public virtual Brand IdNavigation { get; set; } = null!;
