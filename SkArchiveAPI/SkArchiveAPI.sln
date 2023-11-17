@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkArchiveAPI", "SkArchiveAPI.csproj", "{17DAD871-6779-406A-8B9A-B3B4C1F11630}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C} = {AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkArchiveDB", "..\SkArchiveDB\SkArchiveDB.csproj", "{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17DAD871-6779-406A-8B9A-B3B4C1F11630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DAD871-6779-406A-8B9A-B3B4C1F11630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DAD871-6779-406A-8B9A-B3B4C1F11630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DAD871-6779-406A-8B9A-B3B4C1F11630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDE8D16-18A7-46CA-9DFB-A7D19F340E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF58AF3D-11BD-4A61-AA12-2677FDF3CF42}
+	EndGlobalSection
+EndGlobal

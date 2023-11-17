@@ -1,0 +1,14 @@
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\bin\Debug\net7.0\SkArchiveDB.deps.json
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\bin\Debug\net7.0\SkArchiveDB.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\bin\Debug\net7.0\SkArchiveDB.pdb
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.AssemblyInfoInputs.cache
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.AssemblyInfo.cs
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.csproj.CoreCompileInputs.cache
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\refint\SkArchiveDB.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.pdb
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\ref\SkArchiveDB.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\bin\Debug\net7.0\SkArchiveDB.runtimeconfig.json
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.csproj.AssemblyReference.cache
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.genruntimeconfig.cache
