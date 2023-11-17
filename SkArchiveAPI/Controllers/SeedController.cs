@@ -82,7 +82,7 @@ namespace SkArchiveAPI.Controllers
                 {
                     if (!brands.ContainsKey(record.brand))
                     {
-                        Console.WriteLine($"Not found country for {record.product}");
+                        Console.WriteLine($"Not found brand for {record.product}");
                         return NotFound(record);
                     }
 
