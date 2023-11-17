@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using SkArchiveDB;
-using SkArchiveAapi.Data;
+using SkArchiveApi.Data;
 
 namespace SkArchiveAPI.Controllers
 {
@@ -49,7 +49,7 @@ namespace SkArchiveAPI.Controllers
 
                 Brand brand = new()
                 {
-                    Name = record.country,
+                    Name = record.brand,
                     Iso2 = record.iso2,
                     Iso3 = record.iso3
                 };

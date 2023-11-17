@@ -7,6 +7,7 @@ C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\SkA
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\SkArchiveAPI.pdb
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\CsvHelper.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -77,4 +78,3 @@ C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\ref
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkArchiveAPI.pdb
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkArchiveAPI.genruntimeconfig.cache
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\ref\SkArchiveAPI.dll
-C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\CsvHelper.dll
