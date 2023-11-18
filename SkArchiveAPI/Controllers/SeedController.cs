@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using SkArchiveDB;
 using SkArchiveApi.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace SkArchiveAPI.Controllers
 {
@@ -14,12 +15,37 @@ namespace SkArchiveAPI.Controllers
     public class SeedController : ControllerBase
     {
         private readonly SkArchiveDbContext _db;
+        private readonly UserManager<SkArchiveUser> _userManager;
         private readonly string _pathName;
 
-        public SeedController(SkArchiveDbContext db, IWebHostEnvironment environment)
+        public UserManager<SkArchiveUser> UserManager => _userManager;
+
+        public SeedController(SkArchiveDbContext db, IWebHostEnvironment environment, UserManager<SkArchiveUser> userManager)
         {
             _db = db;
             _pathName = Path.Combine(environment.ContentRootPath, "Data/SkArchiveCsv.csv");
+            _userManager = userManager;
+        }
+
+        [HttpPost("Users")]
+        public async Task<IActionResult> ImportUsersAsync()
+        {
+            (string name, string email) = ("user", "user@email.com");
+            SkArchiveUser user = new()
+            {
+                UserName = name,
+                Email = email,
+                SecurityStamp = Guid.NewGuid().ToString(),
+            };
+            if(await _userManager.FindByNameAsync(name) is not null)
+            {
+                user.UserName = "user2";
+            }
+            _ = _userManager.CreateAsync(user, "P@ssw0rd!") ?? throw new InvalidOperationException();
+            user.EmailConfirmed = true;
+            user.LockoutEnabled = false;
+            await _db.SaveChangesAsync();
+            return Ok();
         }
 
         [HttpPost("Brands")]
