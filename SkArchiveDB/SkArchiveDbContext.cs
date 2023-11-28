@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace SkArchiveDB;
 
-public partial class SkArchiveDbContext : DbContext
+public partial class SkArchiveDbContext : IdentityDbContext<SkArchiveUser>
 {
     public SkArchiveDbContext()
     {
@@ -32,6 +32,7 @@ public partial class SkArchiveDbContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Brand>(entity =>
         {
             entity.Property(e => e.Iso2).IsFixedLength();

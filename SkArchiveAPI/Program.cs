@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -21,10 +21,10 @@ builder.Services.AddSwaggerGen(c => {
         {
             Email = "danalee.chew.284@my.csun.edu",
             Name = "Danalee Chew",
-            Url = new("https://countries.csun.edu")
+            Url = new("https://skArchive.csun.edu")
         },
-        Description = "APIs for World Cities",
-        Title = "World Cities APIs",
+        Description = "APIs for Skincare Archive",
+        Title = "Skincare Archive APIs",
         Version = "V1"
     });
     OpenApiSecurityScheme jwtSecurityScheme = new()
@@ -90,6 +90,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
