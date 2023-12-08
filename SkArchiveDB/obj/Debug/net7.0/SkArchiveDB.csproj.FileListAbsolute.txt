@@ -12,3 +12,4 @@ C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\refi
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.pdb
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.genruntimeconfig.cache
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\ref\SkArchiveDB.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveDB\obj\Debug\net7.0\SkArchiveDB.sourcelink.json

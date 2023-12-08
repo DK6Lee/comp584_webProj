@@ -37,7 +37,7 @@ builder.Services.AddSwaggerGen(c => {
         Description = "Please enter *only* JWT token",
         Reference = new OpenApiReference
         {
-            Id = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme,
+            Id = JwtBearerDefaults.AuthenticationScheme,
             Type = ReferenceType.SecurityScheme
         }
     };

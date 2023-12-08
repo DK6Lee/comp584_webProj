@@ -1,6 +1,5 @@
 ﻿using CsvHelper.Configuration;
 using CsvHelper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
@@ -23,14 +22,14 @@ namespace SkArchiveAPI.Controllers
         public SeedController(SkArchiveDbContext db, IWebHostEnvironment environment, UserManager<SkArchiveUser> userManager)
         {
             _db = db;
-            _pathName = Path.Combine(environment.ContentRootPath, "Data/SkArchiveCsv.csv");
             _userManager = userManager;
+            _pathName = Path.Combine(environment.ContentRootPath, "Data/SkArchiveCsv.csv");
         }
 
         [HttpPost("Users")]
         public async Task<IActionResult> ImportUsersAsync()
         {
-            (string name, string email) = ("user", "user@email.com");
+            (string name, string email) = ("user1", "user@email.com");
             SkArchiveUser user = new()
             {
                 UserName = name,
@@ -41,7 +40,7 @@ namespace SkArchiveAPI.Controllers
             {
                 user.UserName = "user2";
             }
-            _ = _userManager.CreateAsync(user, "P@ssw0rd!") ?? throw new InvalidOperationException();
+            _ = await _userManager.CreateAsync(user, "P@ssw0rd!") ?? throw new InvalidOperationException();
             user.EmailConfirmed = true;
             user.LockoutEnabled = false;
             await _db.SaveChangesAsync();
@@ -116,7 +115,6 @@ namespace SkArchiveAPI.Controllers
                     {
                         Name = record.product,
                         Category = record.category,
-                        Description = record.description,
                         BrandId = brands[record.product].Id
                     };
                     _db.Products.Add(product);

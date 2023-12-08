@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Brand } from './brand';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -8,11 +10,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./brands.component.css']
 })
 export class BrandsComponent {
-  brands: BrandData[] = [];
-  baseUrl: string = 'https://localhost:7240';
+  brands: Brand[] = [];
 
   constructor(http: HttpClient){
-    http.get<BrandData[]>(this.baseUrl + '/api/brands').subscribe({
+    http.get<Brand[]>(environment.baseUrl + '/api/brands').subscribe({
       next: result => {
         this.brands = result;
       },
@@ -21,11 +22,4 @@ export class BrandsComponent {
       }
     });
   }
-}
-
-interface BrandData{
-  id: number;
-  name: string;
-  iso2: string;
-  iso3: string;
 }
