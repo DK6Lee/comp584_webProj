@@ -52,8 +52,8 @@ namespace SkArchiveAPI.Controllers
         {
             // create a lookup dictionary containg all of the countries already existing
             // into the database (it will be empty on first run
-            Dictionary<string, Brand> brandsByName = _db.Brands.AsNoTracking()
-                .ToDictionary(x => x.Name, StringComparer.OrdinalIgnoreCase);
+            Dictionary<string, Brand> brandsByName = _db.Brands
+                .AsNoTracking().ToDictionary(x => x.Name, StringComparer.OrdinalIgnoreCase);
 
             CsvConfiguration config = new(CultureInfo.InvariantCulture)
             {
@@ -64,7 +64,7 @@ namespace SkArchiveAPI.Controllers
             using StreamReader reader = new(_pathName);
             using CsvReader csv = new(reader, config);
 
-            IEnumerable<SkArchiveCsv>? records = csv.GetRecords<SkArchiveCsv>().ToList();
+            List<SkArchiveCsv>? records = csv.GetRecords<SkArchiveCsv>().ToList();
             foreach (SkArchiveCsv record in records)
             {
                 if (brandsByName.ContainsKey(record.brand))
@@ -72,11 +72,17 @@ namespace SkArchiveAPI.Controllers
                     continue;
                 }
 
+                if (string.IsNullOrEmpty(record.brand))
+                {
+                    Console.WriteLine($"Skipping {record.brand}");
+                }
+
                 Brand brand = new()
                 {
                     Name = record.brand,
                     Iso2 = record.iso2,
-                    Iso3 = record.iso3
+                    Iso3 = record.iso3,
+                    Country = record.country
                 };
                 await _db.Brands.AddAsync(brand);
                 brandsByName.Add(record.brand, brand);
@@ -89,7 +95,7 @@ namespace SkArchiveAPI.Controllers
         [HttpPost("Products")]
         public async Task<IActionResult> ImportProducts()
         {
-            Dictionary<String, Brand> brands = await _db.Brands.AsNoTracking()
+            Dictionary<string, Brand> brands = await _db.Brands//.AsNoTracking()
                 .ToDictionaryAsync(c => c.Name);
 
             CsvConfiguration config = new(CultureInfo.InvariantCulture)
@@ -100,22 +106,28 @@ namespace SkArchiveAPI.Controllers
 
             int productCount = 0;
             using (StreamReader reader = new(_pathName))
-                using (CsvReader csv = new(reader, config))
+            using (CsvReader csv = new(reader, config))
             {
                 IEnumerable<SkArchiveCsv>? records = csv.GetRecords<SkArchiveCsv>();
                 foreach (SkArchiveCsv record in records)
                 {
                     if (!brands.ContainsKey(record.brand))
                     {
-                        Console.WriteLine($"Not found brand for {record.product}");
+                        Console.WriteLine($"Skipping {record.product}");
                         return NotFound(record);
+                    }
+
+                    if (string.IsNullOrEmpty(record.product) || string.IsNullOrEmpty(record.category))
+                    {
+                        Console.WriteLine($"Skipping {record.product}");
+                        continue;
                     }
 
                     Product product = new()
                     {
                         Name = record.product,
                         Category = record.category,
-                        BrandId = brands[record.product].Id
+                        BrandId = brands[record.brand].Id
                     };
                     _db.Products.Add(product);
                     productCount++;

@@ -37,13 +37,14 @@ public partial class SkArchiveDbContext : IdentityDbContext<SkArchiveUser>
         {
             entity.Property(e => e.Iso2).IsFixedLength();
             entity.Property(e => e.Iso3).IsFixedLength();
+            entity.Property(e => e.Country).IsFixedLength();
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Name).IsFixedLength();
 
-            entity.HasOne(d => d.IdNavigation).WithOne(p => p.Product)
+            entity.HasOne(d => d.Brand).WithMany(p => p.Products)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_products_brands");
         });

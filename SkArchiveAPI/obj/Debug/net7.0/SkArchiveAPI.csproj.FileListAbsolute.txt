@@ -80,3 +80,8 @@ C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkA
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\ref\SkArchiveAPI.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\obj\Debug\net7.0\SkArchiveAPI.sourcelink.json
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Humanizer.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\dkc96055\source\repos\comp584_webProj\SkArchiveAPI\bin\Debug\net7.0\System.CodeDom.dll

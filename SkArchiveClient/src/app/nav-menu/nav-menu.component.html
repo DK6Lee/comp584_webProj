@@ -1,10 +1,12 @@
 <header>
-  <button mat-icon-button [routerLink]="['/']">
-    Home
-  </button>
+  <mat-toolbar color = "primary">
+    <button mat-icon-button [routerLink]="['/']">Home</button>
 
-  <!-- <a mat-flat-button color="primary" [routerLink]="['/counter']">Counter</a>
-  <a mat-flat-button color="primary" [routerLink]="['/fetch-data']">Fetch Data</a> -->
-  <a mat-flat-button color="primary" [routerLink]="['/brands']">Brands</a>
-
+    <!-- <a mat-flat-button color="primary" [routerLink]="['/counter']">Counter</a>
+    <a mat-flat-button color="primary" [routerLink]="['/fetch-data']">Fetch Data</a> -->
+    <a mat-flat-button color="primary" [routerLink]="['/brands']">Brands</a>
+    <span class="separator"></span>
+      <a mat-flat-button color="primary" *ngIf="!isLoggedIn" color="primary" [routerLink]="['/login']">Login</a>
+      <a mat-flat-button color="primary" *ngIf="isLoggedIn" color="primary" (click)="onLogout()">Logout</a> 
+</mat-toolbar>
 </header> 

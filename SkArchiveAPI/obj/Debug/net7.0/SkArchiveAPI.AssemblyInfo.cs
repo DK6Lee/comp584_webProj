@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkArchiveAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9a8b14468f5368ba1b454f7acbe3f3f7f6daf6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+222c24de9bdda22d6b495ce17320d3ee97cb61c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkArchiveAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkArchiveAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

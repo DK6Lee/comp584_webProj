@@ -159,17 +159,21 @@ namespace SkArchiveDB.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nchar(50)")
+                        .IsFixedLength();
 
                     b.Property<string>("Iso2")
                         .IsRequired()
                         .HasMaxLength(2)
                         .IsUnicode(false)
                         .HasColumnType("char(2)")
-                        .HasColumnName("iso2")
                         .IsFixedLength();
 
                     b.Property<string>("Iso3")
@@ -177,61 +181,45 @@ namespace SkArchiveDB.Migrations
                         .HasMaxLength(3)
                         .IsUnicode(false)
                         .HasColumnType("char(3)")
-                        .HasColumnName("iso3")
                         .IsFixedLength();
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("name");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("brands");
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("SkArchiveDB.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BrandId")
-                        .HasColumnType("int")
-                        .HasColumnName("brand_id");
+                        .HasColumnType("int");
 
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("category");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("description");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("name");
-
-                    b.Property<byte[]>("Pic")
-                        .IsRequired()
-                        .HasColumnType("image")
-                        .HasColumnName("pic");
+                        .HasColumnType("nchar(100)")
+                        .IsFixedLength();
 
                     b.HasKey("Id");
 
-                    b.ToTable("products");
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("SkArchiveDB.SkArchiveUser", b =>
@@ -352,18 +340,18 @@ namespace SkArchiveDB.Migrations
 
             modelBuilder.Entity("SkArchiveDB.Product", b =>
                 {
-                    b.HasOne("SkArchiveDB.Brand", "IdNavigation")
-                        .WithOne("Product")
-                        .HasForeignKey("SkArchiveDB.Product", "Id")
+                    b.HasOne("SkArchiveDB.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
                         .IsRequired()
                         .HasConstraintName("FK_products_brands");
 
-                    b.Navigation("IdNavigation");
+                    b.Navigation("Brand");
                 });
 
             modelBuilder.Entity("SkArchiveDB.Brand", b =>
                 {
-                    b.Navigation("Product");
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

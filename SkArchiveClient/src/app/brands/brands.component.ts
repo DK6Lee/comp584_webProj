@@ -13,7 +13,7 @@ export class BrandsComponent {
   brands: Brand[] = [];
 
   constructor(http: HttpClient){
-    http.get<Brand[]>(environment.baseUrl + '/api/brands').subscribe({
+    http.get<Brand[]>(environment.baseUrl + 'api/brands').subscribe({
       next: result => {
         this.brands = result;
       },
