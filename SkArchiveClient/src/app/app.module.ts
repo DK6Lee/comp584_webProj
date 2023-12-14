@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { BrandsComponent } from './brands/brands.component';
+import { ProductsComponent } from './products/products.component';
+import { BrandCategoryComponent } from './brand-category/brand-category.component';
+import { BrandMoisturizerComponent } from './brand-moisturizer/brand-moisturizer.component';
 import { LoginComponent } from './login/login.component';
 
 import { MatButtonModule } from "@angular/material/button";
@@ -26,7 +29,10 @@ import { AuthInterceptor } from './login/auth.interceptor';
     HomeComponent,
     NavMenuComponent,
     BrandsComponent,
-    LoginComponent
+    LoginComponent,
+    ProductsComponent,
+    BrandCategoryComponent,
+    BrandMoisturizerComponent
   ],
   imports: [
     BrowserModule,

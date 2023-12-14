@@ -127,6 +127,7 @@ namespace SkArchiveAPI.Controllers
                     {
                         Name = record.product,
                         Category = record.category,
+                        BrandName = brands[record.brand].Name,
                         BrandId = brands[record.brand].Id
                     };
                     _db.Products.Add(product);

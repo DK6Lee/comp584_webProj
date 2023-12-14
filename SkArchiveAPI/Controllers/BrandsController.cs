@@ -31,41 +31,34 @@ namespace SkArchiveAPI.Controllers
         }
 
         // LINQ statement to get brand info including product category
-        [HttpGet("BrandProductCategory/{name}/{category}")]
-        public BrandProductCategory? GetBrandCategoryCount(string name, string category)
+        [HttpGet("BrandMoisturizerCount/{id}")]
+        public BrandProductCategory? GetBrandMoisturizer(int id)
         {
-            /*
-             * SELECT ID, BRANDNAME, CATEGORY, COUNT(Product.CATEGORY)
-             * FROM Brands
-             * WHERE brand.ID = ID AND product.CATEGORY = category
-             */
             return (from brand in _db.Brands
-                    where brand.Name == name
+                    where brand.Id == id
                     select new BrandProductCategory()
                     {
                         Id = brand.Id,
                         BrandName = brand.Name,
-                        Category = category,
-                        ProdCatCount = brand.Products.Count(p => p.Category == category && p.BrandId == brand.Id)
+                        ProdCatCount = brand.Products.Count(p => p.Category == "Moisturizer" && p.BrandId == brand.Id)
                     }).SingleOrDefault();
         }
 
-        // LINQ statement to get brand info including country
-        /*
-        [HttpGet("BrandCountry/{country}")]
-        public BrandCountry? GetBrandByCountry(string country)
+        [HttpGet("BrandCategoryCount/{id}")]
+        public BrandCatCount? GetBrandCategoryCount(int id)
         {
             return (from brand in _db.Brands
-                    where brand.Country == country
-                    select new BrandCountry()
+                    where brand.Id == id
+                    select new BrandCatCount()
                     {
-                        Iso2 = brand.Iso2,
-                        Iso3 = brand.Iso3,
-                        Country = brand.Country,
-                        BrandName = brand.Name
+                        Id = brand.Id,
+                        BrandName = brand.Name,
+                        CategoryCount = (from product in _db.Products
+                                         where product.BrandId == id
+                                         select product.Category
+                                        ).Distinct().Count()
                     }).SingleOrDefault();
         }
-        */
 
         // GET api/<BrandsController>/5
         [HttpGet("{id}")]

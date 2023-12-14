@@ -17,6 +17,9 @@ public partial class Product
     [StringLength(50)]
     public string Category { get; set; } = null!;
 
+    [StringLength(100)]
+    public string BrandName { get; set; } = null!;
+
     public int BrandId { get; set; }
 
     [ForeignKey("BrandId")]

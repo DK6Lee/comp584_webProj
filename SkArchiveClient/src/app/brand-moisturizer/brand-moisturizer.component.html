@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Brand Category Count</h1>
+
+<p>The number of moisturizers/lotions that I've used from a brand.</p>
+
+<p *ngIf="!brandsMoisturizer?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="brandsMoisturizer.length">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+      <th>Product Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brandsMoisturizer">
+      <td>{{ brand.id }}</td>
+      <td>{{ brand.brandName }}</td>
+      <td>{{ brand.prodCatCount }}</td>
+    </tr>
+  </tbody>
+</table>

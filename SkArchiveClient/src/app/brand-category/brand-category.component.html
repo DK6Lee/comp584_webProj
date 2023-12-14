@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Brand Category Count</h1>
+
+<p>The number of categories that a brand's products fall under. There are 13 total categories.</p>
+
+<p *ngIf="!brandsCategory?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="brandsCategory.length">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+      <th>Category Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brandsCategory">
+      <td>{{ brand.id }}</td>
+      <td>{{ brand.brandName }}</td>
+      <td>{{ brand.CategoryCount }}</td>
+    </tr>
+  </tbody>
+</table>
