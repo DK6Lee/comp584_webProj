@@ -12,7 +12,7 @@ export class BrandMoisturizerComponent {
   brandsMoisturizer: Brand[] = [];
 
   constructor(http: HttpClient){
-    http.get<Brand[]>(environment.baseUrl + 'api/brands/brandsmoisturizercount').subscribe({
+    http.get<Brand[]>(environment.baseUrl + 'api/brands/BrandMoisturizerCount').subscribe({
       next: result => {
         this.brandsMoisturizer = result;
       },

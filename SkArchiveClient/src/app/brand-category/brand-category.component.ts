@@ -12,7 +12,7 @@ export class BrandCategoryComponent {
   brandsCategory: Brand[] = [];
 
   constructor(http: HttpClient){
-    http.get<Brand[]>(environment.baseUrl + 'api/brands/brandcategorycount').subscribe({
+    http.get<Brand[]>(environment.baseUrl + 'api/brands/BrandCategoryCount').subscribe({
       next: result => {
         this.brandsCategory = result;
       },

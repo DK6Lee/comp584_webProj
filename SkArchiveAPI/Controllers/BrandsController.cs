@@ -30,18 +30,17 @@ namespace SkArchiveAPI.Controllers
             return _db.Brands.ToList();
         }
 
-        // LINQ statement to get brand info including product category
-        [HttpGet("BrandMoisturizerCount/{id}")]
-        public BrandProductCategory? GetBrandMoisturizer(int id)
+        [HttpGet("BrandCategoryCount")]
+        [Authorize]
+        public IEnumerable<BrandCatCount> GetBrandCatCount()
         {
-            return (from brand in _db.Brands
-                    where brand.Id == id
-                    select new BrandProductCategory()
-                    {
-                        Id = brand.Id,
-                        BrandName = brand.Name,
-                        ProdCatCount = brand.Products.Count(p => p.Category == "Moisturizer" && p.BrandId == brand.Id)
-                    }).SingleOrDefault();
+            int brandCount = _db.Brands.Count();
+            List<BrandCatCount> catCount = new List<BrandCatCount>();
+            for (int i = 1; i <= brandCount; i++)
+            {
+                catCount.Add(GetBrandCategoryCount(i));
+            }
+            return catCount;
         }
 
         [HttpGet("BrandCategoryCount/{id}")]
@@ -57,6 +56,37 @@ namespace SkArchiveAPI.Controllers
                                          where product.BrandId == id
                                          select product.Category
                                         ).Distinct().Count()
+                    }).SingleOrDefault();
+        }
+
+        [HttpGet("BrandMoisturizerCount")]
+        [Authorize]
+        public IEnumerable<BrandProductCategory> GetBrandMCount()
+        {
+            int brandCount = _db.Brands.Count();
+            List<BrandProductCategory> prodCount = new List<BrandProductCategory>();
+            for (int i = 1; i <= brandCount; i++)
+            {
+                BrandProductCategory brandM = GetBrandMoisturizer(i);
+                if(brandM.ProdCatCount != 0)
+                {
+                    prodCount.Add(brandM);
+                }
+            }
+            return prodCount;
+        }
+
+        // LINQ statement to get brand info including product category
+        [HttpGet("BrandMoisturizerCount/{id}")]
+        public BrandProductCategory? GetBrandMoisturizer(int id)
+        {
+            return (from brand in _db.Brands
+                    where brand.Id == id
+                    select new BrandProductCategory()
+                    {
+                        Id = brand.Id,
+                        BrandName = brand.Name,
+                        ProdCatCount = brand.Products.Count(p => p.Category == "Moisturizer" && p.BrandId == brand.Id)
                     }).SingleOrDefault();
         }
 
