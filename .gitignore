@@ -1,0 +1,3 @@
+# don't include the appsettings files
+appsettings.*.json
+appsettings.json
