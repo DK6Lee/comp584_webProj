@@ -204,6 +204,11 @@ namespace SkArchiveDB.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<string>("BrandName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(50)

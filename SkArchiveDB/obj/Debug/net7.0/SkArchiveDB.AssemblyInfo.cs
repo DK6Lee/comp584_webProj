@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkArchiveDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23b51d8b4a4c98d4c2c45c6cf6575571b5d567f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkArchiveDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkArchiveDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
